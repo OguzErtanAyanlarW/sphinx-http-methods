@@ -11,7 +11,7 @@ setup(
             'sphinx-http-methods.py',
         ],
     },
-    data_files = [("", ["LICENSE"])],
+    data_files = [("", "")],
     url = 'https://github.com/OguzErtanAyanlarW/sphinx-http-methods',
     license = 'MIT',
     description = 'HTTP Method Boxes for Sphinx',
