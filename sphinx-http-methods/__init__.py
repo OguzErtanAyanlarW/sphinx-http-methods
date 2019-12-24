@@ -4,7 +4,7 @@ from docutils.parsers.rst import Directive
 class HelloWorld(Directive):
     def run(self):
         paragraph_node = nodes.paragraph(text='POST')
-        paragraph_node.update_basic_atts(['classes', 'api-method-post api-method-text'])
+        paragraph_node['classes'].append('api-method-post api-method-text')
         return [paragraph_node]
 
 def setup(app):
