@@ -3,14 +3,14 @@ from docutils.parsers.rst import Directive
 
 class HTTPMethodPost(Directive):
     def run(self):
-        element_node = nodes.Element('<span class="api-method-post api-method-text">POST</span>')
-        return [element_node]
+        entry_node = nodes.entry('<span class="api-method-post api-method-text">POST</span>')
+        return [entry_node]
 
 def setup(app):
     app.add_directive("httpmethodpost", HTTPMethodPost)
 
     return {
-        'version': '1.0.2',
+        'version': '1.0.3',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
