@@ -3,8 +3,7 @@ from docutils.parsers.rst import Directive
 
 class HTTPMethodPost(Directive):
     def run(self):
-        element_node = nodes.element()
-        element_node.body.append('<span class="api-method-post api-method-text">POST</span>')
+        element_node = nodes.Element('<span class="api-method-post api-method-text">POST</span>')
         return [element_node]
 
 def setup(app):
