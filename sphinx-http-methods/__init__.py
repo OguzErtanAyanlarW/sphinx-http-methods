@@ -8,7 +8,7 @@ class HTTPPost(Directive):
         return [element_node]
 
 def setup(app):
-    app.add_directive("httppost", HTTPPost)
+    app.add_directive("httppostt", HTTPPost)
 
     return {
         'version': '1.0.0',
