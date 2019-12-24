@@ -3,9 +3,9 @@ from docutils.parsers.rst import Directive
 
 class HTTPPost(Directive):
     def run(self):
-        paragraph_node = nodes.paragraph(text='POST')
-        paragraph_node['classes'].append('api-method-post api-method-text')
-        return [paragraph_node]
+        element_node = nodes.element()
+        element_node.body = ('<span class="api-method-post api-method-text"><p>POST</p></span>')
+        return [element_node]
 
 def setup(app):
     app.add_directive("httppost", HTTPPost)
