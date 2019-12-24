@@ -10,7 +10,7 @@ def setup(app):
     app.add_directive("httpmethodpost", HTTPMethodPost)
 
     return {
-        'version': '1.0.1',
+        'version': '1.0.2',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
