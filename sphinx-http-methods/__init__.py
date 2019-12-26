@@ -1,5 +1,7 @@
 from docutils import nodes
 from docutils.parsers.rst import Directive
+from sphinx.util.osutil import copyfile
+from sphinx.util import logging
 
 FILES = [
     'sphinx-http-methods.css',
@@ -68,7 +70,7 @@ def setup(app):
     app.connect('build-finished', copy_assets)
 
     return {
-        'version': '1.4.3',
+        'version': '1.4.4',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
