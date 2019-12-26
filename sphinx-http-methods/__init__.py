@@ -13,9 +13,9 @@ class HTTPMethod(Directive):
           paragraph_node['classes'] = "post"
         elif (method_type == 'GET'):
           paragraph_node['classes'] = "get"
-        else
+        else:
           paragraph_node['classes'] = "unknown method type"
-          
+
         return [paragraph_node]
 
 def setup(app):
