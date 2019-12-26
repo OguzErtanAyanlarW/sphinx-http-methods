@@ -6,7 +6,12 @@ setup(
     author = 'OguzErtanAyanlar',
     author_email = 'oguzertanayanlar@gmail.com',
     packages = ['sphinx-http-methods'],
-    include_package_data=True,
+    package_data = {
+        'sphinx-http-methods': [
+            '__init__.py',
+            'sphinx-http-methods.css',
+        ],
+    },
     url = 'https://github.com/OguzErtanAyanlarW/sphinx-http-methods',
     license = 'MIT',
     description = 'HTTP Method Boxes for Sphinx',
