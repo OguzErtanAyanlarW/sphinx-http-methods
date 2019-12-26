@@ -24,6 +24,14 @@ class HTTPMethod(Directive):
 
         return [paragraph_node]
 
+def get_compatible_builders(app):
+    builders = ['html', 'singlehtml', 'dirhtml',
+                'readthedocs', 'readthedocsdirhtml',
+                'readthedocssinglehtml', 'readthedocssinglehtmllocalmedia',
+                'spelling']
+    builders.extend(app.config['sphinx-http-methods_valid_builders'])
+    return builders
+
 def copy_assets(app, exception):
     """ Copy asset files to the output """
     if 'getLogger' in dir(logging):
@@ -36,7 +44,7 @@ def copy_assets(app, exception):
     if exception:
         return
     if app.builder.name not in builders:
-        if not app.config['sphinx_http-methods_nowarn']:
+        if not app.config['sphinx-http-methods-nowarn']:
             warn(
                 'Not copying tabs assets! Not compatible with %s builder' %
                 app.builder.name)
