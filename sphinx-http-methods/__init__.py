@@ -17,9 +17,9 @@ class HTTPMethod(Directive):
         method_type = self.arguments[0]
         paragraph_node = nodes.paragraph(text=method_type)
 
-        if (method_type.casefold() == 'POST'):
+        if (method_type.casefold() == 'post'):
           paragraph_node['classes'].append("api-method-post api-method-text")
-        elif (method_type.casefold() == 'GET'):
+        elif (method_type.casefold() == 'get'):
           paragraph_node['classes'].append("api-method-get api-method-text")
         else:
           paragraph_node['classes'].append("api-method-get api-method-text")
