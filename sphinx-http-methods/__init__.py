@@ -2,6 +2,7 @@ from docutils import nodes
 from docutils.parsers.rst import Directive
 from sphinx.util.osutil import copyfile
 from sphinx.util import logging
+import os
 
 FILES = [
     'sphinx-http-methods.css',
