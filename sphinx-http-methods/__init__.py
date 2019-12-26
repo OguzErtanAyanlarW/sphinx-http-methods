@@ -22,7 +22,7 @@ class HTTPMethod(Directive):
         elif (method_type == 'GET'):
           paragraph_node['classes'].append("api-method-get api-method-text")
         else:
-          paragraph_node['classes'].append("unknown method type")
+          paragraph_node['classes'].append("api-method-get api-method-text")
 
         return [paragraph_node]
 
@@ -83,7 +83,7 @@ def setup(app):
     app.connect('build-finished', copy_assets)
 
     return {
-        'version': '1.5.1',
+        'version': '1.5.2',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
