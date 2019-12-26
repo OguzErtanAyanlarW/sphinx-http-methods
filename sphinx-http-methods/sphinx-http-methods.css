@@ -4,7 +4,7 @@
     display: inline-flex;
     align-items: center;
     -webkit-box-align: center;
-    margin: 0px;
+    margin: 0px !important;
     padding: 2px 0px;
     background: rgb(38, 203, 124);
     border-radius: 9999px
@@ -16,7 +16,7 @@
     display: inline-flex;
     align-items: center;
     -webkit-box-align: center;
-    margin: 0px;
+    margin: 0px !important;
     padding: 2px 0px;
     background: rgb(56, 132, 255);
     border-radius: 9999px
