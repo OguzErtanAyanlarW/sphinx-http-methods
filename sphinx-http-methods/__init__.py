@@ -29,7 +29,7 @@ def get_compatible_builders(app):
                 'readthedocs', 'readthedocsdirhtml',
                 'readthedocssinglehtml', 'readthedocssinglehtmllocalmedia',
                 'spelling']
-    builders.extend(app.config['sphinx-http-methods_valid_builders'])
+    builders.extend(app.config['sphinx-http-methods-valid-builders'])
     return builders
 
 def copy_assets(app, exception):
@@ -66,6 +66,8 @@ def copy_assets(app, exception):
 
 
 def setup(app):
+    app.add_config_value('sphinx-http-methods-nowarn', False, '')
+    app.add_config_value('sphinx-http-methods-valid-builders', [], '')
     app.add_directive("httpmethod", HTTPMethod)
 
     for path in ['sphinx-http-methods/' + f for f in FILES]:
@@ -78,7 +80,7 @@ def setup(app):
     app.connect('build-finished', copy_assets)
 
     return {
-        'version': '1.4.5',
+        'version': '1.4.6',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
