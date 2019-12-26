@@ -78,7 +78,7 @@ def setup(app):
     app.connect('build-finished', copy_assets)
 
     return {
-        'version': '1.4.4',
+        'version': '1.4.5',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
