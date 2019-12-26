@@ -13,7 +13,7 @@ def setup(app):
     app.add_directive("helloworld", HelloWorld)
 
     return {
-        'version': '1.0.0',
+        'version': '1.2.0',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }

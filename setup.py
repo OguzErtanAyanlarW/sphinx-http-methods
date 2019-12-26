@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = 'sphinx-http-methods',
-    version = '1.0.4',
+    version = '1.2.0',
     author = 'OguzErtanAyanlar',
     author_email = 'oguzertanayanlar@gmail.com',
     packages = ['sphinx-http-methods'],
