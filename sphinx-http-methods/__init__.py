@@ -17,9 +17,9 @@ class HTTPMethod(Directive):
         method_type = self.arguments[0]
         paragraph_node = nodes.paragraph(text=method_type)
 
-        if (method_type == 'POST'):
+        if (method_type.casefold() == 'POST'):
           paragraph_node['classes'].append("api-method-post api-method-text")
-        elif (method_type == 'GET'):
+        elif (method_type.casefold() == 'GET'):
           paragraph_node['classes'].append("api-method-get api-method-text")
         else:
           paragraph_node['classes'].append("api-method-get api-method-text")
@@ -83,7 +83,6 @@ def setup(app):
     app.connect('build-finished', copy_assets)
 
     return {
-        'version': '1.5.3',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
