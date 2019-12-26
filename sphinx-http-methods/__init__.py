@@ -1,16 +1,19 @@
 from docutils import nodes
 from docutils.parsers.rst import Directive
 
-class HTTPMethodPost(Directive):
+class HelloWorld(Directive):
+    has_content = True
+    required_arguments = 1
+
     def run(self):
-        classifier_node = nodes.classifier('<span class="api-method-post api-method-text">POST</span>')
-        return [classifier_node]
+        paragraph_node = nodes.paragraph(text=self.arguments[0])
+        return [paragraph_node]
 
 def setup(app):
-    app.add_directive("httpmethodpost", HTTPMethodPost)
+    app.add_directive("helloworld", HelloWorld)
 
     return {
-        'version': '1.0.4',
+        'version': '1.0.0',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
