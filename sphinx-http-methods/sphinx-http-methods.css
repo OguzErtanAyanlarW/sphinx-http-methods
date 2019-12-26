@@ -1,0 +1,33 @@
+.api-method-post {
+    color: rgb(255, 255, 255);
+    height: 21px;
+    display: inline-flex;
+    align-items: center;
+    -webkit-box-align: center;
+    margin: 0px;
+    padding: 2px 0px;
+    background: rgb(38, 203, 124);
+    border-radius: 9999px
+}
+
+.api-method-get {
+    color: rgb(255, 255, 255);
+    height: 21px;
+    display: inline-flex;
+    align-items: center;
+    -webkit-box-align: center;
+    margin: 0px;
+    padding: 2px 0px;
+    background: rgb(60, 59, 203);
+    border-radius: 9999px
+}
+
+.api-method-text {
+    font-size: 12px;
+    font-family: Content-font, Roboto, sans-serif;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0px 8px;
+}
