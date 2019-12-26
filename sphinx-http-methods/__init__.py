@@ -33,7 +33,7 @@ def setup(app):
                 app.add_stylesheet(path)
 
     return {
-        'version': '1.4.1',
+        'version': '1.4.2',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
