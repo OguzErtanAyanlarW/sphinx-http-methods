@@ -59,13 +59,14 @@ def copy_assets(app, exception):
     for path in FILES:
         source = resource_filename('sphinx-http-methods', path)
         dest = os.path.join(installdir, path)
+        log('Copyyyyy ' + source + ' to ' + dest)
 
         destdir = os.path.dirname(dest)
         if not os.path.exists(destdir):
             os.makedirs(destdir)
 
         copyfile(source, dest)
-        log('Copied ' + source + ' to ' + dest)
+
 
 def setup(app):
     app.add_config_value('sphinx-http-methods-nowarn', False, '')
@@ -82,7 +83,7 @@ def setup(app):
     app.connect('build-finished', copy_assets)
 
     return {
-        'version': '1.4.9',
+        'version': '1.5.0',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
