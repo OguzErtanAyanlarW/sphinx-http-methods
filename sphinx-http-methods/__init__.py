@@ -26,7 +26,7 @@ def setup(app):
     app.add_directive("helloworld", HelloWorld)
 
     return {
-        'version': '1.2.1',
+        'version': '1.2.2',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
