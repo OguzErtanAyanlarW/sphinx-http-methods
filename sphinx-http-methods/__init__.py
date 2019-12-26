@@ -1,32 +1,28 @@
 from docutils import nodes
 from docutils.parsers.rst import Directive
 
-class httpmethod(nodes.Admonition, nodes.Element):
-    pass
-
-def visit_httpmethod_node(self, node):
-    self.visit_admonition(node)
-
-def depart_httpmethod_node(self, node):
-    self.depart_admonition(node)
-
-class HelloWorld(Directive):
+class HTTPMethod(Directive):
     has_content = True
     required_arguments = 1
 
     def run(self):
-        http_method = httpmethod(text=self.arguments[0])
-        return [http_method]
+        method_type = self.arguments[0]
+        paragraph_node = nodes.paragraph(text=method_type)
+
+        if (method_type == 'POST'):
+          paragraph_node['classes'] = "post"
+        elif (method_type == 'GET'):
+          paragraph_node['classes'] = "get"
+        else
+          paragraph_node['classes'] = "unknown method type"
+          
+        return [paragraph_node]
 
 def setup(app):
-    app.add_node(httpmethod,
-                 html=(visit_httpmethod_node, depart_httpmethod_node),
-                 latex=(visit_httpmethod_node, depart_httpmethod_node),
-                 text=(visit_httpmethod_node, depart_httpmethod_node))
-    app.add_directive("helloworld", HelloWorld)
+    app.add_directive("httpmethod", HTTPMethod)
 
     return {
-        'version': '1.2.2',
+        'version': '1.4.0',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
