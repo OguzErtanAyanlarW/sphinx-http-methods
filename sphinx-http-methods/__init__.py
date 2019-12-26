@@ -10,11 +10,11 @@ class HTTPMethod(Directive):
         paragraph_node = nodes.paragraph(text=method_type)
 
         if (method_type == 'POST'):
-          paragraph_node['classes'] = "post"
+          paragraph_node['classes'].append("post")
         elif (method_type == 'GET'):
-          paragraph_node['classes'] = "get"
+          paragraph_node['classes'].append("get")
         else:
-          paragraph_node['classes'] = "unknown method type"
+          paragraph_node['classes'].append("unknown method type")
 
         return [paragraph_node]
 
@@ -22,7 +22,7 @@ def setup(app):
     app.add_directive("httpmethod", HTTPMethod)
 
     return {
-        'version': '1.4.0',
+        'version': '1.4.1',
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
